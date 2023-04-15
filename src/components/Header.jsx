@@ -13,7 +13,7 @@ return (
         <nav>
             <NavLink to='/host' style={({isActive})=>isActive ? activeStyle : null}>Services</NavLink>
             <NavLink to="/about" style={({isActive}) => isActive ? activeStyle : null }>About</NavLink>
-            <NavLink to="/vans" style={({isActive}) => isActive ? activeStyle : null }>Booking</NavLink>
+            {/* <NavLink to="/vans" style={({isActive}) => isActive ? activeStyle : null }>Booking</NavLink> */}
         </nav>
     </header>
 )
