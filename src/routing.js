@@ -6,7 +6,6 @@ import HostVanDetails from './pages/host/HostVanDetails';
 import HostVanPricing from './pages/host/HostVanPricing';
 import HostVanPhotos from './pages/host/HostVanPhotos';
 import HostVanInfo from './pages/host/HostVanInfo';
-import HostCaterers from './pages/host/HostCaterers'
 import HostCaterersDetails from './pages/host/HostCaterersDetails';
 import HostCaterersPricing from './pages/host/HostCaterersPricing';
 import HostCaterersPhotos from './pages/host/HostCaterersPhotos';
@@ -22,6 +21,7 @@ import Vans from './pages/Vans/Vans'
 import VanDetail from './pages/Vans/VanDetail'
 import Layout from './components/Layout';
 import Dashboard from './pages/host/Dashboard'
+import Form from './pages/Form';
 
 export default function Routing() {
     return (
@@ -30,7 +30,9 @@ export default function Routing() {
                 <Route path='/' element={<Layout />}>
                     <Route index element={<About />} />
                     <Route path="about" element={<Home />} />
+                    <Route path="form" element={<Form />} />
                     <Route path="vans" element={<Vans />} />
+                    <Route path="forms" element={<Form />} />
                     <Route path="vans/:id" element={<VanDetail />} />
                     <Route path='host' element={<HostLayout />}>
                         <Route index element={<Dashboard />} />

@@ -1,6 +1,7 @@
 import React from "react"
 import bgImg from "../assets/images/img1.jpg"
-import { Link } from "react-router-dom"
+import Form from "./Form";
+import { Link } from "react-router-dom";
 
 export default function About() {
     return (
@@ -20,7 +21,7 @@ export default function About() {
             </div>
             <div className="about-page-cta">
                 <h2>Ready to book an event !!<br />Ivoryspartha Organizer is ready.</h2>
-                <Link className="link-button" to="/vans">Book Now !!</Link>
+                <Link className="link-button" to="/forms">Book Now !!</Link>
             </div>
         </div>
     );

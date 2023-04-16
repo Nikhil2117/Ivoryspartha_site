@@ -9,11 +9,11 @@ export default function Header() {
   }
 return (
     <header>
-        <NavLink className="site-logo" to="/">Ivoryspartha </NavLink>
+        <NavLink className="site-logo" to="/">Ivoryspartha</NavLink>
         <nav>
             <NavLink to='/host' style={({isActive})=>isActive ? activeStyle : null}>Services</NavLink>
             <NavLink to="/about" style={({isActive}) => isActive ? activeStyle : null }>About</NavLink>
-            {/* <NavLink to="/vans" style={({isActive}) => isActive ? activeStyle : null }>Booking</NavLink> */}
+            <NavLink to="/vans" style={({isActive}) => isActive ? activeStyle : null }>Booking</NavLink>
         </nav>
     </header>
 )

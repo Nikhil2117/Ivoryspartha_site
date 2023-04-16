@@ -1,14 +1,10 @@
 import React, {useContext} from "react"
 import { Link } from "react-router-dom"
-import {Themes} from '../Theme'
-
 
 export default function Home() {
-    const themes = useContext(Themes);
-    console.log(themes)
     return (
         <div className="home-container">
-            <h1>{themes} From concept to execution, we'll make your event a masterpiece.</h1>
+            <h1> From concept to execution, we'll make your event a masterpiece.</h1>
             <p>
             Looking for a unique and unforgettable experience for your guests?
              Let our team of expert event planners take care of everything!
