@@ -25,6 +25,7 @@ import Layout from "./components/Layout";
 import Dashboard from "./pages/host/Dashboard";
 // import Form from "./pages/Form";
 import Formnew, { action } from "./pages/Formnew";
+import NotFound from './pages/NotFound'
 
 makeServer();
 const router = createBrowserRouter(
@@ -57,6 +58,7 @@ const router = createBrowserRouter(
           <Route path="photos" element={<HostVanPhotos />} />
         </Route>
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Route>
   )
 );
