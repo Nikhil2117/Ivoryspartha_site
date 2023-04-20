@@ -24,7 +24,7 @@ import VanDetail from "./pages/Vans/VanDetail";
 import Layout from "./components/Layout";
 import Dashboard from "./pages/host/Dashboard";
 // import Form from "./pages/Form";
-import Formnew from "./pages/Formnew";
+import Formnew, { action } from "./pages/Formnew";
 
 makeServer();
 const router = createBrowserRouter(
@@ -34,7 +34,7 @@ const router = createBrowserRouter(
       <Route path="about" element={<Home />} />
       {/* <Route path="form" element={<Form-new />} /> */}
       <Route path="vans" element={<Vans />} />
-      <Route path="forms" element={<Formnew />} />
+      <Route path="forms" element={<Formnew />} action={action}/>
       <Route path="vans/:id" element={<VanDetail />} />
       <Route path="host" element={<HostLayout />}>
         <Route index element={<Dashboard />} />

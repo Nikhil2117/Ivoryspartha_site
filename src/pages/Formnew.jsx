@@ -1,6 +1,5 @@
 import React from "react"
 import {
-    useLoaderData,
     useNavigation,
     Form,
     redirect,
@@ -11,40 +10,48 @@ export function loader({ request }) {
     return new URL(request.url).searchParams.get("message")
 }
 
+
 export async function action({ request }) {
-    const formData = await request.formData()
-    // const email = formData.get("email")
-    // const password = formData.get("password")
-    console.log(formData)
-    // try {
-    //     // const data = await loginUser({ email, password })
-    //     localStorage.setItem("loggedin", true)
-    //     return redirect("/host")
-    // } catch(err) {
-    //     return err.message
-    // }
+    if (request) {
+        console.log(request)
+        window. location.replace('/about')
+    }
+    return null;    
 }
 
 export default function Formnew() {
     const errorMessage = useActionData()
-    const message = useLoaderData()
     const navigation = useNavigation()
 
     return (
         <div className="login-container">
-            <h1>Sign in to your account</h1>
-            {message && <h3 className="red">{message}</h3>}
+            <h1>Submit the Details !</h1>
             {errorMessage && <h3 className="red">{errorMessage}</h3>}
 
-            <Form 
-                method="post" 
-                className="login-form" 
+            <Form
+                method="post"
+                className="login-form"
                 replace
             >
                 <input
-                    name="email"
+                    name="Name"
+                    type="text"
+                    placeholder="Your Name"
+                />
+                <input
+                    name="Email"
                     type="email"
                     placeholder="Email address"
+                />
+                <input
+                    name="Phone"
+                    type="tel"
+                    placeholder="Phone Number"
+                />
+                <input
+                    name="City"
+                    type="text"
+                    placeholder="City"
                 />
                 <input
                     name="email"
@@ -52,29 +59,14 @@ export default function Formnew() {
                     placeholder="Email address"
                 />
                 <input
-                    name="email"
-                    type="email"
-                    placeholder="Email address"
+                    name="Food_prefrences"
+                    type="text"
+                    placeholder="Food_prefrences"
                 />
                 <input
-                    name="email"
-                    type="email"
-                    placeholder="Email address"
-                />
-                <input
-                    name="email"
-                    type="email"
-                    placeholder="Email address"
-                />
-                <input
-                    name="email"
-                    type="email"
-                    placeholder="Email address"
-                />
-                <input
-                    name="password"
-                    type="password"
-                    placeholder="Password"
+                    name="People"
+                    type="numeric"
+                    placeholder="Expected People"
                 />
                 <button
                     disabled={navigation.state === "submitting"}
