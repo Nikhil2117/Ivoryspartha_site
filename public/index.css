@@ -5,7 +5,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #c591de;
+    background-color: #FFF7ED;
     font-family: "Inter", sans-serif;
 }
 
@@ -48,12 +48,30 @@ header a {
     text-decoration: none;
     color: #4D4D4D;
     font-weight: 600;
-    padding: 5px 20px;
+    padding: 5px 15px;
 }
 
 header a:hover {
     color: #161616;
     text-decoration: underline;
+}
+
+header button {
+    cursor: pointer;
+}
+
+header .login-icon {
+    height: 18px;
+    width: 18px;
+}
+
+header .login-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
 }
 
 main {
@@ -89,7 +107,6 @@ footer {
     display: block;
     color: black;
     text-decoration: none;
-    margin-top: 60px;
     margin-left: 26px;
 }
 
@@ -164,30 +181,17 @@ footer {
 }
 
 .about-page-cta {
-    background-color: rgb(215, 196, 236);
+    background-color: #FFCC8D;
     color: #161616;
     padding-inline: 32px;
     padding-bottom: 32px;
     margin-inline: 27px;
     border-radius: 5px;
-    overflow: hidden;
-    resize: both;
 }
 
 .about-page-cta h2 {
     margin: 0;
-    padding-block: 30px;
-}
-
-.form {
-    padding-inline: 32px;
-    padding-bottom: 32px;
-    margin-inline: 27px;
-    border-radius: 5px;
-    overflow: hidden;
-    resize: both;
-    margin: 0;
-    padding-block: 30px;
+    padding-block: 37px;
 }
 
 .about-page-cta .link-button {
@@ -288,7 +292,7 @@ i[class*='van-type-'] {
 }
 
 .van-detail-container {
-    padding: 27px;
+    padding-inline: 27px;
 }
 
 .van-detail-container .back-button {
@@ -342,6 +346,7 @@ i[class*='van-type-'] {
 
 .host-nav {
     display: flex;
+    margin-bottom: 30px;
 }
 
 .host-nav a {
@@ -373,7 +378,7 @@ i[class*='van-type-'] {
 .host-van-single {
     display: flex;
     align-items: center;
-    background-color: rgb(215, 196, 236);
+    background-color: white;
     margin-bottom: 15px;
     padding-block: 18px;
     padding-left: 24px;
@@ -396,7 +401,7 @@ i[class*='van-type-'] {
 }
 
 .host-van-detail-layout-container {
-    background-color: rgb(215, 196, 236);
+    background-color: white;
     padding: 24px;
     margin: 30px 26px;
 }
@@ -474,59 +479,67 @@ i[class*='van-type-'] {
     border-radius: 5px;
 }
 
-
-.form {
-    display: grid;
-    margin: 20px;
-    padding: 50px;
-    grid-template: 50px 50px 50px 50px/ 2fr 2fr 2fr 2fr;
-    gap: 17px;
-    margin-bottom: 17px;
-}
-.submit {
-    display: grid;
-    margin: 20px;
-    padding: 50px;
-    gap: 17px;
-    margin-bottom: 17px;
+.not-found-container {
+    padding-inline: 26px;
 }
 
-.form--input {
-    font-family: "Karla", sans-serif;
-    border-radius: 5px;
-    border: 1px solid #D5D4D8;
-    text-indent: 5px;
-}
-
-.form--label {
-    font-family: "Karla", sans-serif;
-    border-radius: 5px;
-    border: 1px solid #D5D4D8;
-    text-indent: 5px;
-}
-
-.form--select--options {
-    font-family: "Karla", sans-serif;
-    border-radius: 5px;
-    border: 1px solid #D5D4D8;
-    text-indent: 5px;
-}
-
-.labelForm {
-    font-family: "Karla", sans-serif;
-    border-radius: 5px;
-    border: 1px solid #D5D4D8;
-    text-indent: 5px;   
-}
-
-.form--button {
-    margin: auto;
-    height: 50px;
-    width:300px;
-    font-family: "Karla", sans-serif;
-    border-radius: 5px;
-    background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+.not-found-container .link-button {
+    width: 100%;
+    background-color: #161616;
     color: white;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 27px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;    
+}
+
+.login-form > input {
+    border: 1px solid rgba(209, 213, 219);
+    height: 40px;
+    text-indent: 10px;
+    font-family: "Inter", sans-serif;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    font-weight: 400;
+}
+
+.login-form > input:focus {
+    outline: none;
+}
+
+.login-form > input:first-of-type {
+    border-radius: 6px 6px 0px 0px;
+}
+
+.login-form > input:last-of-type {
+    border-radius: 0px 0px 6px 6px;
+    border-top: none;
+}
+
+.login-form > button {
+    background-color: #FF8C38;
     border: none;
-    cursor: pointer;
+    border-radius: 6px;
+    height: 55px;
+    margin-top: 22px;
+    color: white;
+    font-family: "Inter", sans-serif;
+}
+
+.login-form > button:disabled {
+    background-color: #aaaaaa;
+    cursor: not-allowed;
+}
+
+.red {
+    color: #cc0000;
 }
