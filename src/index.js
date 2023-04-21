@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import makeServer from "./server";
+import makeServer from "./server/server";
 import { RouterProvider,createBrowserRouter, Route, createRoutesFromElements } from "react-router-dom";
 import HostLayout from "./components/HostLayout";
 import HostVans from "./pages/host/HostVans";

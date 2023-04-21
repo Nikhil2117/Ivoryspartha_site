@@ -543,3 +543,12 @@ i[class*='van-type-'] {
 .red {
     color: #cc0000;
 }
+
+/* media screens */
+/* default styles */
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+

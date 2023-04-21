@@ -6,6 +6,8 @@ import {
     useActionData
 } from "react-router-dom"
 
+// const nodemailer = require('nodemailer');
+
 export function loader({ request }) {
     return new URL(request.url).searchParams.get("message")
 }
