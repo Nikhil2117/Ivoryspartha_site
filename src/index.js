@@ -35,7 +35,7 @@ const router = createBrowserRouter(
       <Route path="about" element={<Home />} />
       {/* <Route path="form" element={<Form-new />} /> */}
       <Route path="vans" element={<Vans />} />
-      <Route path="forms" element={<Formnew />} action={action}/>
+      <Route path="forms" element={<Formnew />}/> 
       <Route path="vans/:id" element={<VanDetail />} />
       <Route path="host" element={<HostLayout />}>
         <Route index element={<Dashboard />} />

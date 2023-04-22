@@ -1,5 +1,5 @@
-import { createServer, Model } from "miragejs"
-
+import { createServer, Model, shutdown } from "miragejs"
+import emailjs from '@emailjs/browser';
 export default function () {
     createServer({
         models: {
@@ -21,6 +21,10 @@ export default function () {
         routes() {
             this.namespace = "api"
             this.logging = false
+
+            this.get('/shutdown',()=>{
+                this.shutdown();
+            });
     
             this.get("/vans", (schema, request) => {
                 return schema.vans.all()
@@ -58,6 +62,15 @@ export default function () {
                 // Hard-code the hostId for now
                 const id = request.params.id
                 return schema.vans.findBy({ id, hostId: "789" })
+            })
+            this.get("/sendmail", obj => {
+                emailjs.sendForm('service_4uf409a', 'template_4w9fuiq', obj, 'FX41_foQcL4wjX64b') 
+                .then((result) => {
+                    console.log(result.text);
+                }, (error) => {
+                    console.log(error);
+                });
+                return true
             })
         }
     })

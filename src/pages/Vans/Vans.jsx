@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, useSearchParams } from "react-router-dom"
 
+
 export default function Vans() {
     const [searchParams, setSearchParams] = useSearchParams()
     const [vans, setVans] = React.useState([])
