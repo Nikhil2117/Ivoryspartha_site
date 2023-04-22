@@ -48,7 +48,7 @@ export default function Formnew() {
           .then((result) => {
               console.log(result.text);
               window.location.reload();
-              window.location.replace('/about')
+              window.location.replace('/')
           }, (error) => {
               console.log(error);
           });
