@@ -12,6 +12,7 @@ export default function Vans() {
             .then(res => res.json())
             .then(data => setVans(data.vans))
             .catch(err=>{
+                console.log(err)
                 window.location.reload()
             })
     }, [])
