@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import makeServer from "../../server/server";
-
+makeServer()
 
 export default function HostVans() {
     const [vans, setVans] = React.useState([])
