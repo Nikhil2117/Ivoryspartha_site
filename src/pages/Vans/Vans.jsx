@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, useSearchParams } from "react-router-dom"
 
-
 export default function Vans() {
     const [searchParams, setSearchParams] = useSearchParams()
     const [vans, setVans] = React.useState([])
@@ -12,6 +11,9 @@ export default function Vans() {
         fetch("/api/vans")
             .then(res => res.json())
             .then(data => setVans(data.vans))
+            .catch(err=>{
+                window.location.reload()
+            })
     }, [])
 
     const displayedVans = typeFilter

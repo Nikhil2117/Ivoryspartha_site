@@ -1,5 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import makeServer from "../../server/server";
+
 
 export default function HostVans() {
     const [vans, setVans] = React.useState([])
@@ -8,6 +10,9 @@ export default function HostVans() {
         fetch("/api/host/caterers")
             .then(res => res.json())
             .then(data => setVans(data.vans))
+            .catch(err=>{
+                window.location.reload()
+            })
     }, [])
 
     const hostVansEls = vans.map(van => (
