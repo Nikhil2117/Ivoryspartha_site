@@ -4,6 +4,8 @@ import {
 } from "react-router-dom"
 import emailjs from '@emailjs/browser';
 
+import makeServer from '../server/server'
+
 export function loader({ request }) {
     return new URL(request.url).searchParams.get("message")
 }
@@ -37,13 +39,12 @@ export function loader({ request }) {
 
 export default function Formnew() {
     const errorMessage = useActionData()
-    fetch('/api/shutdown').then((data)=>console.log('shutdown server'))
-    .catch(err=>console.log(err))
 
     const form = useRef();
     const sendEmail = (e) => {
         e.preventDefault();
-    
+        fetch('/api/shutdown').then((data)=>console.log('shutdown server'))
+        .catch(err=>console.log(err))
         emailjs.sendForm('service_4uf409a', 'template_4w9fuiq', form.current, 'FX41_foQcL4wjX64b') 
           .then((result) => {
               console.log(result.text);
