@@ -108,14 +108,12 @@ export default function Formnew() {
                     }
                 </button>
             </Form> */}
-            <form ref={form} onSubmit={sendEmail}>
-                <label>Name</label>
-                <input type="text" name="user_name" />
-                <label>Email</label>
-                <input type="email" name="user_email" />
-                <label>Message</label>
-                <textarea name="message" />
-                <input type="submit" value="Send" />
+            <form className = 'login-form' ref={form} onSubmit={sendEmail}>
+                {/* <label>Name</label> */}
+                <input type="text" name="user_name" placeholder="Name" />
+                {/* <label>Email</label> */}
+                <input type="email" name="user_email" placeholder="Email Address" />
+                <button type="submit" value="Send"> Submit</button>
             </form>
         </div>
     )
