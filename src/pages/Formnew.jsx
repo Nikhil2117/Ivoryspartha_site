@@ -4,8 +4,6 @@ import {
 } from "react-router-dom"
 import emailjs from '@emailjs/browser';
 
-import makeServer from '../server/server'
-
 export function loader({ request }) {
     return new URL(request.url).searchParams.get("message")
 }
@@ -110,10 +108,30 @@ export default function Formnew() {
                 </button>
             </Form> */}
             <form className = 'login-form' ref={form} onSubmit={sendEmail}>
-                {/* <label>Name</label> */}
-                <input type="text" name="user_name" placeholder="Name" />
-                {/* <label>Email</label> */}
-                <input type="email" name="user_email" placeholder="Email Address" />
+                <input 
+                type="text" 
+                name="user_name" 
+                placeholder="Name"
+                required={true}
+                />
+                <input 
+                type="email" 
+                name="user_email" 
+                placeholder="Email Address" 
+                required={true}
+                />
+                <input 
+                type="tel" 
+                name="phone" 
+                placeholder="Phone Number" 
+                required={true}
+                />
+                <input 
+                type="text" 
+                name="people" 
+                placeholder="Expected People" 
+                required={true}
+                />
                 <button type="submit" value="Send"> Submit</button>
             </form>
         </div>
