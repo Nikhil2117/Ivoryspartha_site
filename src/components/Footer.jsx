@@ -2,6 +2,6 @@ import React from "react";
 
 export default function Footer(){
     return(
-        <footer>&#169; 2023 #IVORYSPARTHA</footer>
+        <footer>&#169; 2024 #IVORYSPARTHA</footer>
     )
 }

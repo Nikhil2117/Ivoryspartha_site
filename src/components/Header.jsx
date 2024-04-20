@@ -8,7 +8,7 @@ export default function Header() {
     color: "#161616"
   }
 return (
-    <header>
+    <header className='headerHome'>
         <NavLink className="site-logo" to="/">Ivoryspartha</NavLink>
         <nav>
             <NavLink to='/host' style={({isActive})=>isActive ? activeStyle : null}>Services</NavLink>

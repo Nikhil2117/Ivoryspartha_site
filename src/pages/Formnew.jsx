@@ -1,46 +1,25 @@
 import React, {useRef} from "react"
+import { useState } from "react";
 import {
     useActionData
 } from "react-router-dom"
 import emailjs from '@emailjs/browser';
+
+import cateringData from "../data/catering";
 
 export function loader({ request }) {
     return new URL(request.url).searchParams.get("message")
 }
 
 
-// export async function action({ request }) {
-//     if (request) {
-//         console.log(request)
-//         const formData = await request.formData()
-//         const emailId = formData.get("email")
-//         const nameId = formData.get("name")
-//         const phoneNo = formData.get("phone")
-//         const cityId = formData.get("city")
-//         const peopleno = formData.get("people")
-//         console.log(emailId)
-//         const obj = {
-//             email : emailId,
-//             name : nameId,
-//             phone : phoneNo,
-//             city : cityId,
-//             people : peopleno
-//         }
-//         fetch('/api/sendmail',obj)
-//         .then(data=>console.log(data))
-//         .catch(err=> console.log(err))
-
-//         // window. location.replace('/about')
-//     }
-//     return null;    
-// }
-
 export default function Formnew() {
     const errorMessage = useActionData()
+    let [estimatedPrice, setEstimatedPrice] = useState(0)
 
     const form = useRef();
     const sendEmail = (e) => {
         e.preventDefault();
+        console.log(form.current)
         fetch('/api/shutdown').then((data)=>console.log('shutdown server'))
         .catch(err=>console.log(err))
         emailjs.sendForm('service_4uf409a', 'template_4w9fuiq', form.current, 'FX41_foQcL4wjX64b') 
@@ -53,60 +32,28 @@ export default function Formnew() {
           });
     };
      
+    async function functionEstimatedPrice(e){
+      e.preventDefault();
+      let number =e.target.value
+      if(number < 100){
+        console.log(number * cateringData.modules.cateringData[100])
+        setEstimatedPrice(number * cateringData.modules.cateringData[100])
+      }else if(number < 200){
+        console.log(number * cateringData.modules.cateringData[200])
+        setEstimatedPrice(number * cateringData.modules.cateringData[200])
+      }else{
+        console.log(number * cateringData.modules.cateringData[300])
+        setEstimatedPrice(number * cateringData.modules.cateringData[300])
+      }
+
+    }
+
+
     return (
         <div className="login-container">
             <h1>Submit the Details !</h1>
             {errorMessage && <h3 className="red">{errorMessage}</h3>}
 
-            {/* <Form
-                method="post"
-                className="login-form"
-                replace
-            >
-                <input
-                    name="Name"
-                    type="text"
-                    placeholder="Your Name"
-                />
-                <input
-                    name="Email"
-                    type="email"
-                    placeholder="Email address"
-                />
-                <input
-                    name="Phone"
-                    type="tel"
-                    placeholder="Phone Number"
-                />
-                <input
-                    name="City"
-                    type="text"
-                    placeholder="City"
-                />
-                <input
-                    name="email"
-                    type="email"
-                    placeholder="Email address"
-                />
-                <input
-                    name="Food_prefrences"
-                    type="text"
-                    placeholder="Food_prefrences"
-                />
-                <input
-                    name="People"
-                    type="numeric"
-                    placeholder="Expected People"
-                />
-                <button
-                    disabled={navigation.state === "submitting"}
-                >
-                    {navigation.state === "submitting"
-                        ? "Logging in..."
-                        : "Log in"
-                    }
-                </button>
-            </Form> */}
             <form className = 'login-form' ref={form} onSubmit={sendEmail}>
                 <input 
                 type="text" 
@@ -131,6 +78,13 @@ export default function Formnew() {
                 name="people" 
                 placeholder="Expected People" 
                 required={true}
+                onChange={functionEstimatedPrice}
+                />
+                <input 
+                type="numeric" 
+                name="price" 
+                placeholder="Extimated Price" 
+                value={'₹ ' + estimatedPrice}
                 />
                 <button type="submit" value="Send"> Submit</button>
             </form>

@@ -120,7 +120,7 @@ footer {
 
 /*** HOME PAGE ***/
 .home-container {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("../../assets/images/home-hero.png") no-repeat center center;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("https://assets.scrimba.com/advanced-react/react-router/beach-bum.png") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -524,6 +524,44 @@ i[class*='van-type-'] {
     border-radius: 0px 0px 6px 6px;
     border-top: none;
 }
+
+.login-form option[disabled] {
+    color: #888; /* Gray color */
+  }
+
+.login-form > select {
+    border: 1px solid rgba(209, 213, 219);
+    height: 40px;
+    text-indent: 10px;
+    font-family: "Inter", sans-serif;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    font-weight: 400;
+}
+
+.login-form > select:focus {
+    outline: none;
+}
+
+.login-form > select:first-of-type {
+    border-radius: 6px 6px 0px 0px;
+}
+
+.login-form > select:last-of-type {
+    border-radius: 0px 0px 6px 6px;
+    border-top: none;
+}
+
+.centered-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-form {
+    width: 400px; /* Adjust width as needed */
+  }
+  
 
 .login-form > button {
     background-color: #FF8C38;
